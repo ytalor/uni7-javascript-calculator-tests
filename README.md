@@ -9,6 +9,7 @@ node index.js soma 0.2 0.3
 
 ## Init API calc 
 cd apiCalc
+
 node index.js
 
 # Tests
