@@ -5,7 +5,7 @@
 yarn install
 
 ## Init calc local
-node indes.js soma 0.2 0.3
+node index.js soma 0.2 0.3
 
 ## Init API calc 
 cd apiCalc
