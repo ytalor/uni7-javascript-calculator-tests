@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "cucumber": "^7.0.0-rc.0",
+    "jest": "^26.5.3"
+  },
+  "scripts": {
+    "test": "jest",
+    "test-cucumber": "cucumber-js"
+  },
+  "name": "automatizacao-testes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
