@@ -10,21 +10,21 @@ class Calculadora {
 
   subtracao(num1, num2) {
     const valor = num1 - num2;
-    const result = round(valor, 2);
+    const result = parseFloat(valor.toFixed(2));
     this.salvaHistorico(result);
     return result;
   }
 
   multiplicacao(num1, num2) {
     const valor = num1 * num2;
-    const result = round(valor, 2);
+    const result = parseFloat(valor.toFixed(2));
     this.salvaHistorico(result);
     return result;
   }
 
   divisao(num1, num2) {
     const valor = num1 / num2;
-    const result = round(valor, 2);
+    const result = parseFloat(valor.toFixed(2));
     this.salvaHistorico(result);
     return result;
   }

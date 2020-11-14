@@ -1,17 +1,28 @@
 const assert = require("assert");
 const { Given, When, Then } = require("cucumber");
-const Calculadora = require("../../CalculadoraService.js");
+const Calculadora = require("../../CalculadoraService");
 
 const calc = new Calculadora();
 
-Given("the numbers 0.3 and 0.2", function () {
-  number = [0.2, 0.3];
+Given("the numbers {int} and {int}", function (int, int2) {
+  this.int = Number(int);
+  this.int2 = Number(int2);
 });
 
-When("sum those numbers", function () {
-  this.actualAnswer = calc.soma(0.3, 0.2);
+When("sum thoses numbers", function () {
+  actualAnswer = calc.soma(this.int, this.int2);
+  console.log("actualAnswer:", this.actualAnswer);
 });
 
-Then("the result should be {float}", function (float) {
-  assert.equal(this.actualAnswer, 0.5);
+When("subtract thoses numbers", function () {
+  actualAnswer = calc.subtracao(this.int, this.int2);
+  console.log("actualAnswer:", this.actualAnswer);
+});
+
+When("multiply thoses numbers", function () {
+  actualAnswer = calc.multiplicacao(this.int, this.int2);
+});
+
+Then("the result should be {int}!", (expectedAnswer) => {
+  assert.equal(actualAnswer, expectedAnswer);
 });
