@@ -4,25 +4,16 @@ const Calculadora = require("../../CalculadoraService");
 
 const calc = new Calculadora();
 
-Given("the numbers {int} and {int}", function (int, int2) {
-  this.int = Number(int);
-  this.int2 = Number(int2);
+Given("the numbers {float} and {float}", function (float, float2) {
+  this.num1 = parseFloat(float);
+  this.num2 = parseFloat(float2);
 });
 
 When("sum thoses numbers", function () {
-  actualAnswer = calc.soma(this.int, this.int2);
+  actualAnswer = calc.soma(this.num1, this.num2);
   console.log("actualAnswer:", this.actualAnswer);
 });
 
-When("subtract thoses numbers", function () {
-  actualAnswer = calc.subtracao(this.int, this.int2);
-  console.log("actualAnswer:", this.actualAnswer);
-});
-
-When("multiply thoses numbers", function () {
-  actualAnswer = calc.multiplicacao(this.int, this.int2);
-});
-
-Then("the result should be {int}!", (expectedAnswer) => {
+Then("the result should be {float}!", (expectedAnswer) => {
   assert.equal(actualAnswer, expectedAnswer);
 });
